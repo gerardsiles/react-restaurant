@@ -1,42 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import images from '../../constants/images';
 import './Navbar.css';
 
+import { useTranslation } from 'react-i18next';
+
 const Navbar = () => {
+	const [t, i18n] = useTranslation('global');
+
+	const { lan, setLang } = useState('en');
+
+	const changeLanguage = e => {
+		setLang(e.target.value);
+	};
+
 	const [toggleMenu, setToggleMenu] = React.useState(false);
 	return (
 		<nav className='app__navbar'>
 			<div className='app__navbar-logo'>
-				<img src={images.gericht} alt='app__logo' />
+				<img src={images.logo} alt='app__logo' />
 			</div>
 			<ul className='app__navbar-links'>
 				<li className='p__opensans'>
 					<a href='#home'>Home</a>
 				</li>
 				<li className='p__opensans'>
-					<a href='#about'>About</a>
+					<a
+						href='https://www.dineout.is/reykjavikmeat?lng=en'
+						target='_blank'
+						rel='noreferrer'
+					>
+						Book a Table
+					</a>
 				</li>
 				<li className='p__opensans'>
 					<a href='#menu'>Menu</a>
 				</li>
 				<li className='p__opensans'>
-					<a href='#awards'>Awards</a>
+					<a href='#findus'>Visit Us</a>
 				</li>
 				<li className='p__opensans'>
-					<a href='#contact'>Contact</a>
+					<a href='#footer'>Contact</a>
 				</li>
 			</ul>
-			<div className='app__navbar-login'>
-				<a href='#login' className='p__opensans'>
-					Log In / Registration
-				</a>
+
+			{/* Languages */}
+			<div className='app__navbar-languages'>
+				<img
+					src={images.is}
+					alt='English Flag'
+					onClick={() => i18n.changeLanguage('is')}
+				/>
+
 				<div />
-				<a href='/' className='p__opensans'>
-					Book Table
-				</a>
+
+				<img
+					src={images.en}
+					alt='English Flag'
+					onClick={() => i18n.changeLanguage('en')}
+				/>
 			</div>
+
+			{/* Hamburger Menu */}
 			<div className='app__navbar-smallscreen'>
 				<GiHamburgerMenu
 					color='#fff'
@@ -57,8 +83,13 @@ const Navbar = () => {
 								</a>
 							</li>
 							<li>
-								<a href='#about' onClick={() => setToggleMenu(false)}>
-									About
+								<a
+									href='https://www.dineout.is/reykjavikmeat?lng=en'
+									target='_blank'
+									rel='noreferrer'
+									onClick={() => setToggleMenu(false)}
+								>
+									Book a Table
 								</a>
 							</li>
 							<li>
@@ -67,8 +98,8 @@ const Navbar = () => {
 								</a>
 							</li>
 							<li>
-								<a href='#awards' onClick={() => setToggleMenu(false)}>
-									Awards
+								<a href='#findus' onClick={() => setToggleMenu(false)}>
+									Visit us
 								</a>
 							</li>
 							<li>

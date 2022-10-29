@@ -9,6 +9,8 @@
 }
 
 .app__navbar-logo {
+	height: 80px;
+
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -36,23 +38,27 @@
 	color: var(--color-grey);
 }
 
-.app__navbar-login {
+.app__navbar-languages {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 }
 
-.app__navbar-login a {
+.app__navbar-languages img {
+	width: 25px;
+	height: 25px;
 	margin: 0 1rem;
 	text-decoration: none;
 	transition: 0.5s ease;
+	cursor: pointer;
 }
 
-.app__navbar-login a:hover {
+.app__navbar-languages img:hover {
+	padding: 2px;
 	border-bottom: 1px solid var(--color-golden);
 }
 
-.app__navbar-login div {
+.app__navbar-languages div {
 	width: 1px;
 	height: 30px;
 	background: var(--color-grey);

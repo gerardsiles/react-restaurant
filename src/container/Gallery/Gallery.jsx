@@ -31,12 +31,17 @@ const Gallery = () => {
 					className='p__opensans'
 					style={{ color: '#AAAAAA', marginTop: '2rem' }}
 				>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-					mattis ipsum turpis elit elit scelerisque egestas mu.
+					Curious about what we do? take a peek at our Instagram
 				</p>
-				<button type='button' className='custom__button'>
-					View More
-				</button>
+				<a
+					href='https://www.instagram.com/reykjavikmeat/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<button type='button' className='custom__button'>
+						View More
+					</button>
+				</a>
 			</div>
 			<div className='app__gallery-images'>
 				<div className='app__gallery-images_container' ref={scrollRef}>
@@ -51,7 +56,13 @@ const Gallery = () => {
 							key={`gallery_image-${index + 1}`}
 						>
 							<img src={image} alt='gallery_image' />
-							<BsInstagram className='gallery__image-icon' />
+							<a
+								href='https://www.instagram.com/reykjavikmeat/'
+								target='_blank'
+								rel='noreferrer'
+							>
+								<BsInstagram className='gallery__image-icon' />
+							</a>
 						</div>
 					))}
 				</div>
