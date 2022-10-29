@@ -3,5 +3,11 @@
 		"h1": "The Steak House Downtown Reykjavik",
 		"p": "Grilling our meats on real charcoals with our specially designed grill for a unique flavour and expirience",
 		"button": "Explore Menu"
+	},
+	"aboutUs": {
+		"about": "About Us",
+		"about_description": "With high grade charcoals and a specially designed grill, we bring to your table the pure flavours or our specially selected meats",
+		"ourHistory": "Our History",
+		"history": "Since XXXX we have been bringing to our house the best wines and meats to deliver you the most unique meat expirience"
 	}
 }
